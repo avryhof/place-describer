@@ -1,0 +1,169 @@
+@defaultFont: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+@defaultFontSize: 14px;
+
+@containerWidth: 960px;
+@defaultPadding: 5px;
+@morePadding: (@defaultPadding * 2);
+
+@buttonFontSize: 1.143em;
+
+@borderRadius: 5px;
+
+@colorDefault: #f3f3f3;
+@colorPrimary: #286090;
+@colorSuccess: #5cb85c;
+@colorInfo: #5bc0de;
+@colorWarning: #f0ad4e;
+@colorDanger: #d9534f;
+
+@borderColorDefault: lighten(@colorDefault, 15%);
+@borderColorPrimary: lighten(@colorPrimary, 15%);
+@borderColorSuccess: lighten(@colorSuccess, 15%);
+@borderColorInfo: lighten(@colorInfo, 15%);
+@borderColorWarning: lighten(@colorWarning, 15%);
+@borderColorDanger: lighten(@colorDanger, 15%);
+
+@import url("normalize.min.css");
+
+
+body {
+	font: @defaultFont;
+	font-size:14px;
+	background:#808080;
+}
+
+.text-center {
+	text-align:center;
+}
+
+/* The Grid */
+.container {
+	background-color:#ffffff;
+	color: #414141;
+	font-size:0;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+}
+
+.row {
+	display:inline-block;
+	width: 100%;
+}
+
+.lt-ie8 [class*='col-'] {
+	display:inline !important;
+	zoom:1 !important;
+}
+
+[class*='col-'] {
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+	padding: @defaultPadding;
+	margin:0;
+	display:inline-block;
+	font-size:14px;
+	vertical-align:top;
+}
+
+.col-xs-12 { width:100%; }
+.col-xs-4 { width:100% / 3; }
+.col-xs-6 { width:50%; }
+
+.more-padding {
+	padding-left: @morePadding !important;
+	padding-right: @morePadding !important;
+}
+
+@media (min-width: @containerWidth) {
+	.mobile-heading {
+		display:none;
+	}
+	.container {
+		width: @containerWidth;
+		margin: 10px auto 10px auto;
+	}
+	.cowphoto {
+		width:100%;
+		height:auto;
+		max-width:400px;
+		max-height:286px;
+	}
+	
+	.col-sm-12 { width:100% !important; }
+	.col-sm-4 { width:100% / 3 !important; }
+	.col-sm-6 { width:50% !important; }
+}
+
+@media (max-width: (@containerWidth - 1)) {
+	.mobile-heading {
+		display:block;
+	}
+	.container {
+		width:100%;
+	}
+	.cowphoto {
+		max-width:600px;
+		width:100%;
+		height:auto;
+	}
+}
+
+
+/* Buttons */
+
+.btn {
+	display:inline-block;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	box-sizing:border-box;
+	font: bold @buttonFontSize @defaultFont;
+	-moz-border-radius:@borderRadius;
+	-webkit-border-radius:@borderRadius;
+	border-radius:@borderRadius;
+	padding:7px 5px 7px 5px;
+	width:auto;
+	margin:5px;
+}
+
+.btn-default {
+	color: contrast(@colorDefault);
+	background-color: @colorDefault;
+	border: 1px solid @borderColorDefault;
+}
+.btn-default:hover {
+	background-color: saturate(@colorDefault,20%);
+}
+.btn-primary {
+	color: contrast(@colorPrimary);
+	background-color: @colorPrimary;
+	border: 1px solid @borderColorPrimary;
+}
+.btn-primary:hover {
+	background-color: saturate(@colorPrimary,20%);
+}
+.btn-success {
+	color: contrast(@colorSuccess);
+	background-color: @colorSuccess;
+	border: 1px solid @borderColorSuccess;
+}
+.btn-success:hover {
+	background-color: saturate(@colorSuccess,20%);
+}
+.btn-warning {
+	color: contrast(@colorWarning);
+	background-color: @colorWarning;
+	border: 1px solid @borderColorWarning;
+}
+.btn-warning:hover {
+	background-color: saturate(@colorWarning,20%);
+}
+.btn-danger {
+	color: contrast(@colorDanger);
+	background-color: @colorDanger;
+	border: 1px solid @borderColorDanger;
+}
+.btn-danger:hover {
+	background-color: saturate(@colorWarning,20%);
+}
