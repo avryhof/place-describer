@@ -1,0 +1,14 @@
+{
+    "launch_path": "/index.html",
+    "installs_allowed_from": [
+        "*"
+    ],
+    "version": "0.0.1",
+    "name": "PlaceDescriber",
+    "description": "An app for building a database with coordinates for describing features within a place.",
+    "developer": {
+        "name": "Amos Vryhof",
+        "url": "http://vryhof.net"
+    },
+    "icons": {}
+}
