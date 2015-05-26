@@ -1,5 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.placedescriber.www" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <feature name="Camera">
+        <param name="browser-package" value="Camera" />
+    </feature>
     <name>PlaceDescriber</name>
     <description>
         An app for building a database with coordinates for describing features within a place. 
@@ -15,7 +18,5 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
-    <feature name="Camera">
-        <param name="browser-package" value="Camera" />
-    </feature>
+    <icon src="res/icon.png" />
 </widget>

@@ -10,6 +10,10 @@ body {
 .text-center {
   text-align: center;
 }
+.code {
+  color: #FFFFFF;
+  background: #000000;
+}
 /* The Grid */
 .container {
   background-color: #ffffff;
@@ -58,12 +62,6 @@ body {
     width: 960px;
     margin: 10px auto 10px auto;
   }
-  .cowphoto {
-    width: 100%;
-    height: auto;
-    max-width: 400px;
-    max-height: 286px;
-  }
   .col-sm-12 {
     width: 100% !important;
   }
@@ -81,15 +79,20 @@ body {
   .container {
     width: 100%;
   }
-  .cowphoto {
-    max-width: 600px;
-    width: 100%;
-    height: auto;
+  .col-xs-12 {
+    width: 100% !important;
+  }
+  .col-xs-4 {
+    width: 33.333333333333336% !important;
+  }
+  .col-xs-6 {
+    width: 50% !important;
   }
 }
 /* Buttons */
 .btn {
   display: inline-block;
+  text-decoration: none;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -140,4 +143,22 @@ body {
 }
 .btn-danger:hover {
   background-color: #ffb03f;
+}
+/* Images */
+.img-responsive {
+  max-width: 100%;
+  height: auto;
+}
+/* Form */
+form .form-group {
+  display: inline-block;
+  width: 100%;
+}
+form .form-group label {
+  font-weight: bold;
+  display: block;
+}
+form .form-group .form-control {
+  display: inline-block;
+  width: 100%;
 }

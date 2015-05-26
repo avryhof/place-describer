@@ -47,6 +47,9 @@
         },
         "org.apache.cordova.dialogs": {
             "PACKAGE_NAME": "com.placedescriber.www"
+        },
+        "org.apache.cordova.console": {
+            "PACKAGE_NAME": "com.placedescriber.www"
         }
     },
     "dependent_plugins": {

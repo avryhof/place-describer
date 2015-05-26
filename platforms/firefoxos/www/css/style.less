@@ -36,6 +36,11 @@ body {
 	text-align:center;
 }
 
+.code {
+	color:#FFFFFF;
+	background:#000000;
+}
+
 /* The Grid */
 .container {
 	background-color:#ffffff;
@@ -84,13 +89,6 @@ body {
 		width: @containerWidth;
 		margin: 10px auto 10px auto;
 	}
-	.cowphoto {
-		width:100%;
-		height:auto;
-		max-width:400px;
-		max-height:286px;
-	}
-	
 	.col-sm-12 { width:100% !important; }
 	.col-sm-4 { width:100% / 3 !important; }
 	.col-sm-6 { width:50% !important; }
@@ -103,11 +101,10 @@ body {
 	.container {
 		width:100%;
 	}
-	.cowphoto {
-		max-width:600px;
-		width:100%;
-		height:auto;
-	}
+	.col-xs-12 { width:100% !important; }
+	.col-xs-4 { width:100% / 3 !important; }
+	.col-xs-6 { width:50% !important; }
+
 }
 
 
@@ -115,6 +112,7 @@ body {
 
 .btn {
 	display:inline-block;
+	text-decoration:none;
 	-moz-box-sizing:border-box;
 	-webkit-box-sizing:border-box;
 	box-sizing:border-box;
@@ -166,4 +164,26 @@ body {
 }
 .btn-danger:hover {
 	background-color: saturate(@colorWarning,20%);
+}
+
+/* Images */
+.img-responsive {
+	max-width:100%;
+	height:auto;
+}
+
+/* Form */
+form {
+	.form-group {
+		display:inline-block;
+		width: 100%;
+		label {
+			font-weight:bold;
+			display:block;
+		}
+		.form-control {
+			display:inline-block;
+			width: 100%;
+		}
+	}
 }

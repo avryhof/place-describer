@@ -58,7 +58,9 @@
                             "xml": "<uses-permission android:name=\"android.permission.RECORD_VIDEO\" />",
                             "count": 1
                         }
-                    ]
+                    ],
+                    "/manifest/application": [],
+                    "/manifest": []
                 }
             }
         }
@@ -80,6 +82,9 @@
             "PACKAGE_NAME": "com.placedescriber.www"
         },
         "org.apache.cordova.dialogs": {
+            "PACKAGE_NAME": "com.placedescriber.www"
+        },
+        "org.apache.cordova.console": {
             "PACKAGE_NAME": "com.placedescriber.www"
         }
     },

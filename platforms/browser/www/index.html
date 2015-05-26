@@ -29,70 +29,70 @@
             * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
                 * Enable inline JS: add 'unsafe-inline' to default-src
         -->
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval' 'unsafe-inline'; connect-src *.councilofparkfriends.org; style-src 'self' 'unsafe-inline'; media-src *">
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
         <meta name="apple-mobile-web-app-capable" content="yes" />
         
         <link rel="stylesheet" type="text/css" href="css/index.css">
-        <link href="css/style.css?v=2" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
         <title>Place Describer</title>
     </head>
     <body>
-    <div class="container">
+    <div class="app container">
     	<div class="row">
         	<div class="col-xs-12 text-center">
             	<div id="camera">
-    				<button class="btn btn-primary" onclick="capturePhoto();">Capture Photo</button>
- 
-    				<div style="text-align:center;margin:20px;">
-        				<img id="cameraPic" src="" style="width:auto;height:120px;"></img>
-    				</div>
+    				<button class="btn btn-primary" onClick="mycam.capturePhoto();">Capture Photo</button>
+                    <div class="text-center">
+                    	<img id="largeImage" src="" class="img-responsive">
+                    </div>
 				</div>
             </div>
         </div>
-    </div>
-    <div class="app">
-            <h1>Apache Cordova</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
+        <div class="row">
+        	<div class="col-xs-12">
+            	<form>
+                <div class="col-xs-6">
+                	<div class="form-group">
+                    	<label for="lat">Lat</label>
+                        <input type="text" name="lat" id="lat" class="form-control">
+                    </div>
+                </div>
+                <div class="col-xs-6">
+                    <div class="form-group">
+                    	<label for="lon">Lon</label>
+                        <input type="text" name="lon" id="lon" class="form-control">
+                    </div>
+                </div>
+                <div class="col-xs-12">
+                	<div class="form-group">
+                    	<label for="title">Title</label>
+                        <input type="text" name="title" id="title">
+                    </div>
+                </div>
+                <div class="col-xs-12">
+                    <div class="form-group">
+                    	<label for="desc">Description</label>
+                        <textarea name="desc" id="desc" class="form-control"></textarea>
+                    </div>
+                </div>
+                <input type="hidden" name="base64_image" id="base64_image" value="">
+                <div class="row">
+                	<div class="col-xs-12">
+                		<div class="form-group">
+                        	<a href="#" id="submitButton" class="btn btn-primary">Submit</a>
+                        </div>
+                    </div>
+                </div>
+                </form>
             </div>
         </div>
+    </div>
+           
         <script type="text/javascript" src="cordova.js"></script>
+        <script src="js/jquery-2.1.4.min.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
-		<script>
-            function capturePhoto(){
-                navigator.camera.getPicture(uploadPhoto,null,{sourceType:1,quality:60});
-            }
-            
-            function uploadPhoto(data){
-                // this is where you would send the image file to server
-             
-                //output image to screen
-                cameraPic.src = "data:image/jpeg;base64," + data;
-                navigator.notification.alert(
-                    'Your Photo has been uploaded', // message
-                    okay,                           // callback
-                    'Photo Uploaded',               // title
-                    'OK'                            // buttonName
-                );
-                
-                if (failedToUpload){
-                    navigator.notification.alert(
-                        'Your Photo has failed to upload',
-                        failedDismissed,
-                        'Photo Not Uploaded',
-                        'OK'
-                    );
-                } 
-            }
-            
-            function okay(){
-                // Do something
-            }
-        </script>
     </body>
 </html>

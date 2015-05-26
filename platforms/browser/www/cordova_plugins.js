@@ -239,6 +239,7 @@ module.exports.metadata =
     "org.apache.cordova.media-capture": "0.3.6",
     "org.apache.cordova.file-transfer": "0.5.0",
     "org.apache.cordova.dialogs": "0.3.0",
+    "org.apache.cordova.console": "0.2.13",
     "org.apache.cordova.file": "1.3.3"
 }
 // BOTTOM OF METADATA

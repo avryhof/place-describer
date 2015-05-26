@@ -5,22 +5,6 @@
         <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
         <param name="onload" value="true" />
     </feature>
-    <allow-intent href="market:*" />
-    <name>PlaceDescriber</name>
-    <description>
-        An app for building a database with coordinates for describing features within a place. 
-    </description>
-    <author email="amos@vryhof.net" href="http://vryhof.net">
-        Amos Vryhof
-    </author>
-    <content src="index.html" />
-    <access origin="*" />
-    <allow-intent href="http://*/*" />
-    <allow-intent href="https://*/*" />
-    <allow-intent href="tel:*" />
-    <allow-intent href="sms:*" />
-    <allow-intent href="mailto:*" />
-    <allow-intent href="geo:*" />
     <feature name="Camera">
         <param name="android-package" value="org.apache.cordova.camera.CameraLauncher" />
     </feature>
@@ -37,4 +21,21 @@
     <feature name="Notification">
         <param name="android-package" value="org.apache.cordova.dialogs.Notification" />
     </feature>
+    <allow-intent href="market:*" />
+    <name>PlaceDescriber</name>
+    <description>
+        An app for building a database with coordinates for describing features within a place. 
+    </description>
+    <author email="amos@vryhof.net" href="http://vryhof.net">
+        Amos Vryhof
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <icon src="res/icon.png" />
 </widget>
