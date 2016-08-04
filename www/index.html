@@ -1,60 +1,102 @@
 <!DOCTYPE html>
-<!--
-    Copyright (c) 2012-2016 Adobe Systems Incorporated. All rights reserved.
-
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
--->
 <html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
+        <meta name="msapplication-config" content="browserconfig.xml" />
 
-<head>
-    <meta charset="utf-8" />
-    <meta name="format-detection" content="telephone=no" />
-    <meta name="msapplication-tap-highlight" content="no" />
-    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
-    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
-    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
-    <!-- Good default declaration:
-    * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
-    * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
-    * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
-        * Enable inline JS: add 'unsafe-inline' to default-src
-        * Enable eval(): add 'unsafe-eval' to default-src
-    * Create your own at http://cspisawesome.com
-    -->
-    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+        <link rel="stylesheet" href="css/proact-common.css">
+        <title>App</title>
+    </head>
+    <body>
+        
+        <!-- Panel tags go here -->
+        <div id="pharmacies" class="panel-full">
+            <header class="header-bar">
+                <a class="btn icon icon-close pull-right" href="#" data-panel-close="true"></a>
+                <h1 class="title">Pharmacies</h1>
+            </header>
 
-    <link rel="stylesheet" type="text/css" href="css/index.css" />
-    <title>Hello World</title>
-</head>
-
-<body>
-    <div class="app">
-        <h1>PhoneGap</h1>
-        <div id="deviceready" class="blink">
-            <p class="event listening">Connecting to Device</p>
-            <p class="event received">Device is Ready</p>
+            <div class="content" id="pharmacy_list">
+                <p class="padded-full">The contents of my panel go here.</p>
+            </div>
         </div>
-    </div>
-    <script type="text/javascript" src="cordova.js"></script>
-    <script type="text/javascript" src="js/index.js"></script>
-    <script type="text/javascript">
-        app.initialize();
-    </script>
-</body>
 
+        <!-- Side Panel tags go here -->
+        <div class="side-panel side-panel-left" data-expose-aside="none" data-disable="right" data-page="home, pagetwo" id="side-home">
+            <header class="header-bar">
+                <button class="btn pull-right icon icon-close" data-side-panel-close="true"></button>
+                <div class="pull-left">
+                    <h1 class="title">Menu</h1>
+                </div>
+            </header>
+
+            <div class="content">
+                <ul class="list">
+                    <li><a class="padded-list">Profile</a></li>
+                    <li><a class="padded-list">About</a></li>
+                    <li><a class="padded-list">Settings</a></li>
+                    <li><a class="padded-list">Login</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Notification tags go here -->
+
+        <!-- Dialog tags go here -->
+
+
+        <!-- the home page is the default one. This page does not require to call its content because we define on its tag.-->
+        <home data-page="true">
+
+            <header class="header-bar">
+                <a class="btn pull-left icon icon-menu" data-side-panel-id="side-home"></a>
+                <div class="center">
+                    <img src="img/proact.svg" class="header-logo">
+                </div>
+                <!-- <a class="btn pull-right fa fa-user"></a> -->
+            </header>
+
+            <div class="content">
+
+                <ul class="list">
+                    <li class="divider">Select a function</li>
+                    <li>
+                        <a class="padded-list" href="#!login/">
+                            <i class="fa fa-user"></i> Sign In
+                        </a>
+                    </li>
+                    <li>
+                        <a class="padded-list" href="#!quickrefill/">
+                            <i class="fa fa-ambulance"></i> Quick Rx Refill <span class="text-muted"><em><small>(No sign-in required)</small></em></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="padded-list" href="#!locator/">
+                            <i class="fa fa-map-marker"></i> Find In Network Pharmacies
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+        </home>
+
+        <!-- Pages. -->
+        <login data-page="true"></login>
+        <quickrefill data-page="true"></quickrefill>
+        <locator data-page="true"></locator>
+        
+
+        <!-- scripts -->
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
+        <script type="text/javascript" src="js/phonon.min.js"></script>
+
+        <script type="text/javascript" src="js/geonames.js"></script>
+
+        <!-- our app config -->
+        <script type="text/javascript" src="js/app.js"></script>
+    </body>
 </html>
+        
