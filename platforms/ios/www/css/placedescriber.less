@@ -1,0 +1,57 @@
+@proactYellow: #FAF1C3;
+@proactBlue: #091F3F;
+@borderYellow: #FFFFCC;
+@black: #333333;
+@white: #FFFFFF;
+@mutedText: #414141;
+
+@import url('font-awesome.min.css');
+@import url('phonon.min.css');
+
+body {
+  font-family: 'Noto', Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+}
+
+.header-bar {
+  color: @proactBlue;
+  background-color: @proactYellow;
+  border-bottom: @borderYellow;
+  .title {
+    color: @proactBlue;
+  }
+  .btn {
+    color: @black;
+  }
+}
+
+.side-panel .header-bar {
+  color: @white;
+  .title, .btn {
+    color: @white;
+  }
+}
+
+.header-logo {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: auto;
+  max-height: 50px;
+  padding: 3px;
+}
+
+.body-logo {
+  width: 60%;
+  text-align: center;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.text-muted {
+  color: @mutedText;
+}
+
+input[type=date] {
+  color: @black;
+  background-color: @white;
+}

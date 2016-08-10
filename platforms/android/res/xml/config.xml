@@ -83,10 +83,10 @@
     <allow-intent href="market:*" />
     <name>Place Describer</name>
     <description>
-        Hello World sample application that responds to the deviceready event.
+        An app for building a database with coordinates for describing features within a place.
     </description>
-    <author email="support@phonegap.com" href="http://phonegap.com">
-        PhoneGap Team
+    <author email="amos@vryhof.net" href="http://vryhof.net">
+        Amos Vryhof
     </author>
     <content src="index.html" />
     <preference name="DisallowOverscroll" value="true" />
